@@ -1,0 +1,13 @@
+numpy
+matplotlib
+healpy
+astropy
+torch
+torchvision
+tqdm
+lightning
+joblib
+scipy
+numba
+pymaster  # installation of this package is quite delicate, may need to use conda?
+

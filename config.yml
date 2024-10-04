@@ -1,0 +1,54 @@
+wandb:
+  project: superres-dust
+  online: False
+  log_model: False
+  run:
+    id:
+
+trainer:
+  accelerator: cpu # mps
+  strategy: auto
+  checkpoint_path:
+  devices: auto
+  epochs: 100
+  log_maps_every_n_epochs: 5
+  # Use 1 if scheduler is used to log learning rate
+  log_every_n_steps: 50
+  overfit_batches: 0
+
+dataset:
+  debug: False
+  # The parent directory of the datasets
+  dir: 'data/'
+  num_workers: 4
+  batch_size: 16
+  add_noise: False
+  noise_scale_factor: 0.05
+
+model:
+  # The name of the model configuration .yaml in <project-directory>/configs/model/
+  name: main
+  # Whether to use torch.checkpoints.
+  # Switch to True if False leads to an OOM-Exception.
+  memory_efficient: False
+  in_channels: 2
+  num_channels: 32
+  num_res_blocks_encoder: 4
+  num_res_blocks_decoder: 5
+  dropout: 0.0
+  nhead: 2
+  num_layers: 2
+  learning_rate: 0.0001
+  b1: 0.9
+  b2: 0.999
+  use_transpose_conv_in_decoder: True
+
+loss:
+  l1: 1.0
+  ssim: 0.0
+  ms_ssim: 0.0
+  vgg:
+    p: 0.0
+    vgg_model: vgg19
+    batch_norm: False
+    layers: 8
