@@ -4,3 +4,4 @@ checkpoints/
 __pycache__/
 scrap.ipynb
 eval.ipynb
+.DS_Store
