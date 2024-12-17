@@ -14,7 +14,7 @@ trainer:
   log_maps_every_n_epochs: 5
   # Use 1 if scheduler is used to log learning rate
   log_every_n_steps: 50
-  overfit_batches: 0
+  overfit_batches: 5
 
 dataset:
   debug: False
