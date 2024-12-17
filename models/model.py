@@ -111,6 +111,7 @@ class Model(pl.LightningModule):
                 batch_size=self.batch_size,
                 on_step=True,
                 on_epoch=False,
+                prog_bar=True,
             )
             return loss
         else:
@@ -147,6 +148,7 @@ class Model(pl.LightningModule):
                 on_step=False,
                 on_epoch=True,
                 sync_dist=True,
+                prog_bar=True,
             )
             self.loss.reset()
 
