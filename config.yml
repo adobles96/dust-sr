@@ -31,7 +31,7 @@ model:
   # Whether to use torch.checkpoints.
   # Switch to True if False leads to an OOM-Exception.
   memory_efficient: False
-  in_channels: 2
+  in_channels: 5
   num_channels: 32
   num_res_blocks_encoder: 4
   num_res_blocks_decoder: 5
